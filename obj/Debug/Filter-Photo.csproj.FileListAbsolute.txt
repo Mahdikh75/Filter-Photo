@@ -1,0 +1,5 @@
+E:\Platforms\Computer\Components\Filter-Photo\Filter-Photo\bin\Debug\Filter-Photo.dll
+E:\Platforms\Computer\Components\Filter-Photo\Filter-Photo\bin\Debug\Filter-Photo.pdb
+E:\Platforms\Computer\Components\Filter-Photo\Filter-Photo\obj\Debug\Filter-Photo.csprojAssemblyReference.cache
+E:\Platforms\Computer\Components\Filter-Photo\Filter-Photo\obj\Debug\Filter-Photo.dll
+E:\Platforms\Computer\Components\Filter-Photo\Filter-Photo\obj\Debug\Filter-Photo.pdb

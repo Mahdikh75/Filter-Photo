@@ -1,0 +1,4 @@
+E:\Platforms\Computer\Components\Filter-Photo\Filter-Photo\bin\Release\Filter-Photo.dll
+E:\Platforms\Computer\Components\Filter-Photo\Filter-Photo\bin\Release\Filter-Photo.pdb
+E:\Platforms\Computer\Components\Filter-Photo\Filter-Photo\obj\Release\Filter-Photo.dll
+E:\Platforms\Computer\Components\Filter-Photo\Filter-Photo\obj\Release\Filter-Photo.pdb
