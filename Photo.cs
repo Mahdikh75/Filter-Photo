@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
+﻿using System.Drawing;
 
 namespace Filter_Photo
 {
@@ -20,7 +15,7 @@ namespace Filter_Photo
             return new Bitmap(image).Clone(new Rectangle(x, y, W, H), System.Drawing.Imaging.PixelFormat.Format32bppArgb);
         }
 
-        public Image PS_Image(string text, Font font, Color color, Image image, Point point)
+        public Image SetTextImage(string text, Font font, Color color, Image image, Point point)
         {
             Bitmap bitmap = new Bitmap(image);
             Graphics graphics = Graphics.FromImage(bitmap);
@@ -37,5 +32,19 @@ namespace Filter_Photo
             return bitmap;
         }
 
+        public Image RemoveBackgroundImage(Image Image, Color Old_Background, Color New_Background)
+        {
+            Bitmap bitmap = new Bitmap(Image);
+            for (int i = 0; i < bitmap.Height; i++)
+            {
+                for (int j = 0; j < bitmap.Width; j++)
+                {
+                    var old_color = bitmap.GetPixel(i, j);
+                    if (old_color == Old_Background)
+                        bitmap.SetPixel(i, j, New_Background);
+                }
+            }
+            return bitmap;
+        }
     }
 }

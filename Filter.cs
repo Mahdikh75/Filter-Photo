@@ -17,7 +17,7 @@ namespace Filter_Photo
         {
             this.image = image;
         }
-
+        // خاکستری کردن تصویر
         public Image GrayScale()
         {
             Bitmap bitmap = new Bitmap(image);
@@ -32,7 +32,7 @@ namespace Filter_Photo
             }
             return bitmap;
         }
-
+        // نگاتیو کردن تصویر - وارونه سازی
         public Image Invert()
         {
             Bitmap bitmap = new Bitmap(image);
@@ -51,6 +51,51 @@ namespace Filter_Photo
         public enum TypeColor
         {
             red, green, blue
+        }
+
+        // int alpha [0 to 255]
+        public Image Alpha(int alpha)
+        {
+            Bitmap bitmap = new Bitmap(image);
+            if (alpha >= 1 && alpha <= 255)
+            {
+                for (int i = 0; i < image.Width; i++)
+                {
+                    for (int j = 0; j < image.Height; j++)
+                    {
+                        Color color = bitmap.GetPixel(i, j);
+                        bitmap.SetPixel(i, j, Color.FromArgb(alpha, color.R, color.G, color.B));
+                    }
+                }
+                return bitmap;
+            }
+            return null;
+        }
+
+        public Image ClearColor(int R, int G, int B, Color new_set)
+        {
+            try
+            {
+                Bitmap bitmap = new Bitmap(image);
+                for (int i = 0; i < bitmap.Width; i++)
+                {
+                    for (int j = 0; j < bitmap.Height; j++)
+                    {
+                        var color_old = bitmap.GetPixel(i, j);
+                        Color color = color_old;
+                        if (color_old.R == R && color_old.G == G && color_old.B == B)
+                        {
+                            color = new_set;
+                        }
+                        bitmap.SetPixel(i, j, color);
+                    }
+                }
+                return bitmap;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         // ColorFilter [0 to 255] (value color)
